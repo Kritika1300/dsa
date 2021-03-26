@@ -32,3 +32,38 @@ public class Main
 	    }
 	}
 }
+OR......................
+import java.util.*;
+class Node {
+   
+    int data;
+    int depth;
+    Node left, right;
+    
+    public Node(int data,int depth) {
+        this.data = data;
+        this.depth = depth;
+    }
+}
+public class Main {
+    public static void main (String[] args) { 
+        Node root = new Node(1,0); 
+        root.left = new Node(2,1); 
+        root.right = new Node(3,1); 
+    
+        printLeafNodes(root,2,0);
+    }
+    public static void printLeafNodes(Node root,int k,int depth){
+        if(root == null) return;
+        else if(k == depth){
+            System.out.print(root.data + " ");
+        }
+        else{
+            printLeafNodes(root.left,k,depth + 1);
+            printLeafNodes(root.right,k,depth + 1);
+        }
+        
+    }
+
+}
+    
