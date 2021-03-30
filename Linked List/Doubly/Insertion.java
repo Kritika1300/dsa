@@ -66,7 +66,7 @@ class DoublyLinkedList{
     }
     public void insertBefore(int index,int data){
         Node newNode = new Node();
-        newNode.data =data;
+        newNode.data = data;
         if(index == 0){
            insertAtStart(data);
         }
