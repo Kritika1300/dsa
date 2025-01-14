@@ -6,11 +6,9 @@ class Solution {
         String arrayOfStringWords[] = trimmedString.split("\\s+");
         int j = arrayOfStringWords.length - 1;
         for (int i = 0; i < j; i++) {
-            if (arrayOfStringWords[i] !=  " ") {
-                String temp = arrayOfStringWords[i];
-                arrayOfStringWords[i] = arrayOfStringWords[j];
-                arrayOfStringWords[j] = temp;
-            }
+            String temp = arrayOfStringWords[i];
+            arrayOfStringWords[i] = arrayOfStringWords[j];
+            arrayOfStringWords[j] = temp;
             j--;
         }
         String res = String.join(" ", arrayOfStringWords);
