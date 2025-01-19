@@ -1,0 +1,12 @@
+https://www.geeksforgeeks.org/problems/reverse-an-array/0
+class Solution {
+    public void reverseArray(int arr[]) {
+       int j = arr.length - 1;
+       for (int i = 0; i < j; i++) {
+           int temp = arr[i];
+           arr[i] = arr[j];
+           arr[j] = temp;
+           j--;
+       } 
+    }
+}
