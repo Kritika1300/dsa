@@ -1,0 +1,21 @@
+https://leetcode.com/problems/find-pivot-index/description/?envType=study-plan-v2&envId=leetcode-75
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int prefixSum = 0;
+        int suffixSum = 0;
+        int i = 0;
+        for (i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                suffixSum += nums[j];
+            }
+            if (i != 0) {
+                prefixSum += nums[i - 1];
+            }
+            if (suffixSum == prefixSum) {
+                return i;
+            }
+            suffixSum = 0;
+        }
+        return -1;
+    }
+}
