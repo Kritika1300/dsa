@@ -1,0 +1,18 @@
+https://www.educative.io/courses/grokking-coding-interview/sort-colors
+def sort_colors(colors):
+    i = 0; #denotes 0
+    j = 0; #denotes 1
+    k = len(colors) - 1; #denotes 2
+    
+    while (j <= k):
+        if (colors[j] == 1):
+            j += 1;
+        elif (colors[j] == 2):
+            colors[j], colors[k] = colors[k], colors[j];
+            k -= 1;
+        else:
+            colors[j], colors[i] = colors[i], colors[j];
+            i += 1;
+            j += 1;
+    return colors
+            
