@@ -1,0 +1,13 @@
+def sort_colors(colors):
+    countred = 0;
+    countwhite = 0;
+    countblue = 0;
+    res_colours = [];
+    for color in colors:
+        if (color == 0):
+            countred += 1;
+        elif (color == 1):
+            countwhite += 1;
+        else:
+            countblue += 1;
+    return [0]*countred + [1]*countwhite + [2]*countblue
