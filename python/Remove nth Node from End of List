@@ -1,0 +1,34 @@
+https://www.educative.io/courses/grokking-coding-interview/remove-nth-node-from-end-of-list
+# Definition for a Linked List node
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+from ds_v1.LinkedList.LinkedList import ListNode
+
+def remove_nth_last_node(head, n):
+    
+    current = head;
+    count = 0;
+    while current.next != None:
+        current = current.next;
+        count += 1;
+    count +=1;
+    
+    index = count - n;
+    
+    if (index == 0):
+        head = head.next;
+        return head;
+    
+    current = head;
+    counter = 0;
+    while (counter < index-1):
+        current = current.next;
+        counter +=1;
+        print(current);
+        
+    current.next = current.next.next;
+    return head;
+
+
