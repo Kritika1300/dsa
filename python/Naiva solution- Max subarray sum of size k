@@ -1,0 +1,11 @@
+https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1
+class Solution:
+    def maxSubarraySum(self, arr, k):
+        # code here 
+        maxSum = 0;
+        for i in range (0, len(arr)-k+1):
+            sum = 0;
+            for j in range (i, i+k):
+                sum += arr[j];
+            maxSum = max(maxSum, sum);
+        return maxSum;
