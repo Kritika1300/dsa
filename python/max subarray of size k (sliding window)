@@ -1,0 +1,13 @@
+class Solution:
+    def maxSubarraySum(self, arr, k):
+        # code here 
+        maxSum = 0;
+        currSum = 0;
+        for i in range(0, k):
+            currSum += arr[i];
+        maxSum = currSum;
+        for i in range (k, len(arr)):
+            currSum = currSum + arr[i] - arr[i-k];
+            maxSum = max(maxSum, currSum);
+        
+        return maxSum;
