@@ -1,0 +1,17 @@
+#User function Template for python3
+https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1
+class Solution:
+    def subarraySum(self, arr, target):
+        # code here
+        res = [0,0];
+        currSum = 0;
+        for i in range(0, len(arr)):
+            currSum = 0;
+            for j in range(i, len(arr)):
+                currSum += arr[j];
+                if (currSum == target):
+                    res[0] = i+1;
+                    res[1] = j+1;
+                    return res;
+        return [-1];
+            
