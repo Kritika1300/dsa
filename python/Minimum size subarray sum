@@ -1,0 +1,15 @@
+https://www.educative.io/courses/grokking-coding-interview/minimum-size-subarray-sum
+def min_sub_array_len(target, nums):
+    left = 0;
+    minLength = float('inf');
+    sum = 0;
+    for right in range(0, len(nums)):
+        sum += nums[right];
+        while (sum >= target):
+            minLength = min(minLength, right-left+1);
+            sum = sum - nums[left];
+            left += 1;
+    
+    if (minLength == float('inf')):
+        return 0;
+    return minLength;
