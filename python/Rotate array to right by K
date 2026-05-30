@@ -1,0 +1,7 @@
+https://www.educative.io/courses/grokking-coding-interview/rotate-array
+def rotate(nums, k):
+    k = k % len(nums); #taking modulus if k is greater than num then eventually rotation will reappear as if k = 7, len = 5 then after 5 rotations array will be same
+    nums.reverse(); #reverse entire array
+    nums[0:k] = nums[0:k][::-1] #reverse first k digits
+    nums[k:] = nums[k:][::-1] #reverse left digits
+    # Write your solution code here
