@@ -1,0 +1,18 @@
+class Node:
+    def __init__(self, data):
+        self.data = data;
+        self.left = None;
+        self.right = None;
+        
+
+
+rootNode = Node(5);
+secondNode = Node(2);
+thirdNode  = Node(1);
+thirdNodeChild = Node(4);
+
+rootNode.left = secondNode;
+rootNode.right = thirdNode;
+thirdNode.left = thirdNodeChild;
+        
+    
