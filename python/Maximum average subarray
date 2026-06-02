@@ -1,0 +1,15 @@
+https://www.educative.io/courses/grokking-coding-interview/maximum-average-subarray-i
+def find_max_average(nums, k):
+    currSum = 0;
+    currAvg = 0;
+    maxAvg = 0;
+    for i in range (0, k):
+        currSum += nums[i];
+        currAvg = currSum / k;
+        maxAvg = currAvg;
+    for i in range(k, len(nums)):
+        currSum = currSum + nums[i] - nums[i - k];
+        currAvg = currSum / k;
+        maxAvg = max(maxAvg, currAvg);
+    
+    return maxAvg;
