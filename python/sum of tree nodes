@@ -1,0 +1,22 @@
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right 
+
+
+root = TreeNode(10);
+root.left = TreeNode(20);
+root.right = TreeNode(50);
+root.left.left = TreeNode(40);
+root.left.right = TreeNode(30);
+root.left.right.left = TreeNode(60);
+
+def sum_nodes(root):
+    if root is None:
+        return 0
+    return root.val + sum_nodes(root.left) + sum_nodes(root.right)
+    
+print(sum_nodes(root))
